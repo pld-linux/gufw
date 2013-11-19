@@ -7,8 +7,10 @@ Group:		Networking/Admin
 Source0:	https://launchpad.net/gui-ufw/gufw-13.10/13.10/+download/gui-ufw-%{version}.tar.gz
 # Source0-md5:	26997dc8b251aed1df00477d54d33d5c
 URL:		http://gufw.org/
+BuildRequires:	gettext-tools
 BuildRequires:	intltool
 BuildRequires:	python-distribute
+BuildRequires:	python-distutils-extra
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 Requires:	desktop-file-utils
