@@ -1,7 +1,7 @@
 Summary:	A graphical user interface for Ubuntu's Uncomplicated Firewall
 Name:		gufw
 Version:	13.10.3
-Release:	0.2
+Release:	0.3
 License:	GPL 3.0
 Group:		Networking/Admin
 Source0:	https://launchpad.net/gui-ufw/gufw-13.10/13.10/+download/gui-ufw-%{version}.tar.gz
@@ -13,7 +13,9 @@ BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 Requires:	desktop-file-utils
 Requires:	gobject-introspection
+Requires:	gtk-update-icon-cache
 Requires:	gtk-webkit3
+Requires:	hicolor-icon-theme
 Requires:	notification-daemon
 Requires:	polkit
 Requires:	python-dbus
@@ -57,9 +59,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %update_desktop_database
+%update_icon_cache hicolor
 
 %postun
 %update_desktop_database
+%update_icon_cache hicolor
 
 %files
 %defattr(644,root,root,755)
